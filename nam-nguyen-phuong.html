@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<select id="arr1" onchange="namest()">
+		<option value="">Chon</option>
+	</select>
+	<select id="arr2">
+
+	</select>
+</body>
+<script>
+	var students = [
+		{ id: 1, name: 'tran van a', className: '.net' },
+		{ id: 2, name: 'tran van b', className: '.net' },
+		{ id: 3, name: 'tran van c', className: 'angular' },
+		{ id: 4, name: 'tran van d', className: 'angular' },
+		{ id: 5, name: 'tran van e', className: 'java' },
+		{ id: 6, name: 'tran van f', className: 'java' },
+		{ id: 7, name: 'tran van g', className: 'java' },
+		{ id: 8, name: 'tran van h', className: 'test' },
+		{ id: 9, name: 'tran van i', className: 'test' },
+		{ id: 10, name: 'tran van j', className: 'test' }
+	]
+	var groups = new Set(students.map(item => item.className));
+	var result = [];
+	groups.forEach(g =>
+		result.push({
+			className: g,
+			items: students.filter(i => i.className === g)
+		})
+	);
+	console.log(result);
+	result.forEach(element => {
+		document.getElementById('arr1').innerHTML += '<option value="' + element.className + '">' + element.className + '</option>';
+	});
+	function namest() {
+		document.getElementById('arr2').innerHTML = '';
+		result.forEach(element => {
+			element.items.forEach(i => {
+				if (element.className == arr1.value) {
+					document.getElementById('arr2').innerHTML += '<option value="' + i.name + '">' + i.name + '</option>';
+				}
+
+			})
+		})
+	}
+
+</script>
+
+</html>

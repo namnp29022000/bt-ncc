@@ -1,0 +1,126 @@
+body{
+    font-family: sans-serif;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: #333;
+}
+h1{
+    margin: 0;
+}
+.col-200{
+    width: 200px;
+}
+.col-max{
+    flex: 3 0;
+}
+
+.flex{
+    display: flex;
+    align-items: flex-start;
+}
+.space-between{
+    justify-content: space-between;
+}
+@media (max-width: 620px) {
+    .flex{
+        display: flex;
+        flex-direction: column;
+    }
+    .col-200{
+        width: 100%;
+    }
+    .col-max{
+        width: 100%;
+    }
+}
+.header{
+    background: #E5E5E5;
+    color: #AAA;
+    font-size: 30px;
+    padding: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+.list-link{
+    padding-top: 10px;
+}
+.list-link li a{
+    text-align: center;
+    text-transform: capitalize;
+    display: block;
+    background: #E5E5E5;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.post{
+    display: inline-block;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: DodgerBlue; */
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 250px;
+  /* height: 150px; */
+  margin: 10px;
+  text-align: center;
+  /* line-height: 75px; */
+  font-size: 30px;
+}
+.flex-container > div .text{
+    font-size: 15px;
+    font-weight: bold;
+}
+/* .post h1 a{
+    text-decoration: none;
+    color: #AAA;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 25px;
+} */
+/* .post p{
+    color: #AAA;
+} */
+.text{
+    white-space: nowrap; 
+    width: 250px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.about{
+    background: #E5E5E5;
+    margin-top: 10px;
+    padding: 10px;
+}
+.about h1{
+    text-align: center;
+}
+.about h1 a{
+    color: #AAA;
+    font-size: 25px;
+    font-weight: bold;
+}
+.about p{
+    text-align: center;
+    font-size: 18px;
+    color: #AAA;
+}
+.footer{
+    margin-top: 10px;
+    background: #E5E5E5;
+    color: #aaa;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+}
