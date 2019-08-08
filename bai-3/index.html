@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="header-content">
+        <div class="clearfix hc">
+            <div class="icon-left float-left ">
+                <i id="flip" class="fa fa-bars icon-bar" aria-hidden="true"></i>
+                <i class="fa fa-cubes"></i>
+                <span>Timesheet</span>
+            </div>
+            <div class="icon-search float-right">
+                <i class="fa fa-search"></i>
+                <i class="fa fa-ellipsis-v"></i>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix body-content">
+        <div id="panel" class="aside">
+            <div class="aside-content ">
+                <div class="aside-admin">
+                    <div class="aside-admin-img">
+                        <img src="./public/img/user.png" alt="">
+                    </div>
+                    <div class="aside-admin-account clearfix">
+                        <div class="float-left aside-admin-account-email">
+                            .\admin
+                            <br>
+                            admin@gmail.com
+                        </div>
+                        <div class="float-right aside-admin-account-icon">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-menu">
+                    <ul>
+                        <li>
+                            <div class="aside-menu-content">
+                                <i class="fa fa-home"></i> <span>Home Page</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="aside-menu-content">
+                                <i class="fa fa-users"></i> <span>Users</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="aside-menu-content">
+                                <i class="fa fa-tasks"></i><span>Manage Projects</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="aside-menu-content">
+                                <i class="fa fa-users"></i><span>Clients</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="aside-menu-content">
+                                <i class="fa fa-bookmark"></i><span>Tasks</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="aside-menu-content">
+                                <i class="fa fa-calendar-check-o"></i><span>Timesheet</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="aside-menu-content">
+                                <i class="fa fa-clock-o"></i><span>MyTimesheets</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="aside-foot">
+                    <div class="aside-foot-year">
+                        © 2019 <strong>Timesheet</strong>
+                    </div>
+                    <div class="aside-foot-version">
+                        <b>Version</b> 4.3.0.0 [20192407]
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <div class="main">
+                <div class="m-header">
+                    <h2>Manage Projects</h2>
+                    <ul class="header-dropdown">
+                        <li>
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row clearfix main-action">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <div class=" btn-add">
+                            <button class="btn btn-danger pad-left-right" data-toggle="modal" data-target="#myModal">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                New Projects
+                            </button>
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog  modal-xl">
+                                    <div class="modal-content" style="width:800px">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Create Project</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+
+
+                                            <ul class="nav nav-tabs">
+                                                <li style="margin-left: 20px;" class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab"
+                                                        href="#general">general</a>
+                                                </li>
+                                                <li style="margin-left: 20px;" class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#team">Team</a>
+                                                </li>
+                                                <li style="margin-left: 20px;" class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tasks">Tasks</a>
+                                                </li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                    <div id="general" class="container tab-pane active"><br>
+                                                        <div class="lb-ip">
+                                                          <label><span style="margin-right: 65px; font-size: 15px"><b>Client(*)</b></span>
+                                                              <input style="border-radius: 5px;width: 300px; height: 48px; padding-left: 10px" type="text" placeholder="Choose a client..."/>
+                                                              <i style="position: absolute; margin-left: -25px; margin-top: 17px"class="fa fa-angle-down"></i>
+                                                              <button style="margin-top: 0px;margin-left: 55px;width: 150px;height: 45px;" class="btn btn-success" id="myBtn">
+                                                                          <i class=" fa fa-plus"></i>
+                                                                           New Client</button>
+                                                          </label>
+                                                        </div>
+                                                        <div class="lb-ip">
+                                                         <label><span style="margin-right: 15px"> <b>Project name(*)</b></span>
+                                                              <input style="border-radius: 5px;width: 300px; height: 48px; padding-left: 10px" type="text" placeholder="Project Name...">
+                                                         </label>
+                                                        </div>
+                                                        <div class="lb-ip">
+                                                         <label><span style="margin-right: 18px;border-radius: 5px;"><b>Project Code(*)</b></span>
+                                                             <input class="input-new"  type="text" placeholder="Project Code..." style="border-radius: 5px;">
+                                                         </label>
+                                                        </div>
+                                                        <div class="lb-ip">
+                                                         <label><span style=" margin-right: 72px"><b>Date(*)</b></span>
+                                                             <input style="border-radius: 5px;width: 200px; height: 48px; padding-left: 10px" type="text" placeholder="Start on">
+                                                             <span>To</span>
+                                                             <input style="border-radius: 5px;width: 180px; height: 48px; padding-left: 10px"  type="text" placeholder="End on" >
+                                                         </label>
+                                                        </div>
+                                                        <div class="lb-ip">
+                                                         <label><span style="margin-right: 87px"><b>Note</b></span>
+                                                             <textarea style="border-radius: 5px;width: 550px; height: 48px"></textarea>
+                                                         </label>
+                                                        </div>
+                                                        <div class="lb-ip">
+                                                         <label><span style="margin-right: 20px"><b>Project Type</b></span>
+                                                             <button class="btn-project-type" type="button" class="btn btn-light" style="border-radius: 5px;">Time & Material</button>
+                                                             <button class="btn-project-type" type="button" class="btn btn-danger" style="border-radius: 5px;">Fixed Fee</button>
+                                                             <button class="btn-project-type" type="button" class="btn btn-light" style="border-radius: 5px;">Non Billable</button>
+                                                         </label>
+                                                        </div>
+                                                    </div>
+                                                    <div id="team" class="container tab-pane fade"><br>
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Team</th>
+                                                                    <th>Member Type</th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                       <!--  <span>Select team member </span> -->
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Select team member</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr><td><i class=" fa fa-plus-circle"><span class="team-member">Admin1</span></i></td></tr>
+                                                                <tr><td><i class=" fa fa-plus-circle"><span class="team-member">Admin2</span></i></td></tr>
+                                                                <tr><td><i class=" fa fa-plus-circle"><span class="team-member">Admin3</span></i></td></tr>
+                                                                <!-- <tr><td>Huong2k7</td></tr>
+                                                                <tr><td>Huong2k7</td></tr> -->
+                                                                
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div id="tasks" class="container tab-pane fade"><br>
+                                                         <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th><span id="task">Tasks</span></th>
+                                                                    <th><span id="billable">Billable</span></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr><td><i class=" fa fa-remove"><span class="team-member">Admin1</span></i></td></tr>
+                                                                <tr><td><i class=" fa fa-clear"><span class="team-member">Admin2</span></i></td></tr>
+                                                                <tr><td><i class=" fa fa-clear"><span class="team-member">Admin3</span></i></td></tr>
+                                                            </tbody>
+                                                            
+                                                        </table>
+                                                    </div>
+                                                  </div>
+
+
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-success"
+                                                data-dismiss="modal">Save</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mb-10">
+                        <div class="btn-group btn-border sele">
+                            <button type="button" class="btn btn-drop dropdown-toggle selecte" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Active Projects
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Active Project</a>
+                                <a class="dropdown-item" href="#">Deactive Project</a>
+                                <a class="dropdown-item" href="#">All Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                        <input class="form-control mat-top" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                </div>
+                <div class="pad-table">
+                    <table class="table">
+                        <thead class="thead-light ">
+                            <th style="border-radius:8px;border-top:0px;border-bottom:0px">Tom</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>
+                                        Mimosa
+                                    </span>
+                                    <div class="btn-group btn-border sele-act float-right">
+                                        <button type="button" class="btn btn-drop dropdown-toggle selecte"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <div class="dropdown-menu drow-width drop">
+                                            <a class="dropdown-item" href="#">View</a>
+                                            <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+                                        Demo2
+                                    </span>
+                                    <div class="btn-group btn-border sele-act float-right">
+                                        <button type="button" class="btn btn-drop dropdown-toggle selecte"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <div class="dropdown-menu drow-width">
+                                            <a class="dropdown-item" href="#">View</a>
+                                            <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead class="thead-light ">
+                            <th style="border-radius:8px;border-top:0px;border-bottom:0px">Tom</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>
+                                        Mimosa
+                                    </span>
+                                    <div class="btn-group btn-border sele-act float-right">
+                                        <button type="button" class="btn btn-drop dropdown-toggle selecte"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <div class="dropdown-menu drow-width drop">
+                                            <a class="dropdown-item" href="#">View</a>
+                                            <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+                                        Demo2
+                                    </span>
+                                    <div class="btn-group btn-border sele-act float-right">
+                                        <button type="button" class="btn btn-drop dropdown-toggle selecte"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <div class="dropdown-menu drow-width">
+                                            <a class="dropdown-item" href="#">View</a>
+                                            <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead class="thead-light ">
+                            <th style="border-radius:8px;border-top:0px;border-bottom:0px">Tom</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>
+                                        Mimosa
+                                    </span>
+                                    <div class="btn-group btn-border sele-act float-right">
+                                        <button type="button" class="btn btn-drop dropdown-toggle selecte"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <div class="dropdown-menu drow-width drop">
+                                            <a class="dropdown-item" href="#">View</a>
+                                            <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+                                        Demo2
+                                    </span>
+                                    <div class="btn-group btn-border sele-act float-right">
+                                        <button type="button" class="btn btn-drop dropdown-toggle selecte"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <div class="dropdown-menu drow-width">
+                                            <a class="dropdown-item" href="#">View</a>
+                                            <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="./public/js/action.js"></script>
+</body>
+
+</html>
